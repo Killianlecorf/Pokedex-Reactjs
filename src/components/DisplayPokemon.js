@@ -8,11 +8,12 @@ const DisplayPokemon = () => {
     const fetchApi = async () => {
         const response = await fetch('https://pokebuildapi.fr/api/v1/pokemon')
         const data = await response.json();
-        // console.log(data)
         setData(data) 
     }
     
     fetchApi()
+
+    console.log(data);
 
 
     return (
@@ -20,7 +21,7 @@ const DisplayPokemon = () => {
             <div className='DisplayCard'>
                 {
                     data.map(pokemon =>
-                        <PokemonCard key={pokemon.id} name={pokemon.name} /> 
+                        <PokemonCard key={pokemon.id} name={pokemon.name} img={pokemon.image} /> 
                     )
                 }
             </div>

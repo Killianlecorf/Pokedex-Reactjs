@@ -1,0 +1,15 @@
+.BackDisplayPokemon{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+
+
+    .DisplayCard{
+        width: 90vw;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

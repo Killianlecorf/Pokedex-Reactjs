@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PokemonCard from './PokemonCard';
 
-const DisplayPokemon = ({pokemon}) => {
+const DisplayPokemon = () => {
 
     const [data,  setData] = useState([])
 
@@ -18,10 +18,11 @@ const DisplayPokemon = ({pokemon}) => {
             <div className='DisplayCard'>
                 {
                     data.map(pokemon =>
-                        <PokemonCard key={pokemon.id} name={pokemon.name} img={pokemon.image} id={pokemon.id} /> 
+                        <PokemonCard key={pokemon.id} name={pokemon.name} img={pokemon.image} /> 
                     )
                 }
             </div>
+            
         </div>
     );
 };

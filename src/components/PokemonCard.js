@@ -1,10 +1,8 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
-const PokemonCard = ({name, img, id}) => {
+const PokemonCard = ({name, img}) => {
     return (
         <div className='FlexCard'>
-            <NavLink to={'/' + id}>
                 <div className='BackCard'>
                     <div className='TitleCard'>
                         {name}
@@ -13,7 +11,6 @@ const PokemonCard = ({name, img, id}) => {
                         <img src={img}></img>
                     </div>
                 </div>
-            </NavLink>
         </div>
     );
 };

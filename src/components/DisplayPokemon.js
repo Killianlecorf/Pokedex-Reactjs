@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PokemonCard from './PokemonCard';
 
-const DisplayPokemon = () => {
+const DisplayPokemon = ({pokemon}) => {
 
     const [data,  setData] = useState([])
 
@@ -13,15 +13,12 @@ const DisplayPokemon = () => {
     
     fetchApi()
 
-    console.log(data);
-
-
     return (
         <div className='BackDisplayPokemon'>
             <div className='DisplayCard'>
                 {
                     data.map(pokemon =>
-                        <PokemonCard key={pokemon.id} name={pokemon.name} img={pokemon.image} /> 
+                        <PokemonCard key={pokemon.id} name={pokemon.name} img={pokemon.image} id={pokemon.id} /> 
                     )
                 }
             </div>

@@ -1,0 +1,21 @@
+.modal-wrapper{
+    position: fixed;
+    inset: 0;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.441);
+
+    .modal{
+        width: 50%;
+        height: 75%;
+        background-color: white;
+        border: 3px solid black;
+
+        .close-area{
+            width: 100%;
+            height: 5%;
+            border-bottom: 2px solid black;
+        }
+    }
+}

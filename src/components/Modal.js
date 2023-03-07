@@ -9,6 +9,9 @@ const Modal = ({setIsModalOpen, name}) => {
 
     return (
         <div onClick={handleCloseModal} className='modal-wrapper'>
+            <div className="image-modal-content">
+                
+            </div>
             <div className="modal">
                 <div className="close-area">
                     <div className='close-cross-content'>
@@ -25,4 +28,4 @@ const Modal = ({setIsModalOpen, name}) => {
     );
 };
 
-export default Modal;
+export default Modal; 

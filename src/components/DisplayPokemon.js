@@ -7,7 +7,10 @@ import logoPokemon from '../assets/img/logo.png'
 const DisplayPokemon = () => {
 
     const [data,  setData] = useState([])
-    const [isModalOpen,  setIsModalOpen] = useState(false)
+    const [modalOpen,  setModalOpen] = useState({
+        isOpen: false,
+        pokemon: null
+    })
     const [currentPage, setCurrentPage] = useState(1)
     const [postPerPage, setPostPerPage] = useState(32)
     const [searchTerm, setSearchTerm] = useState("")
@@ -21,13 +24,13 @@ const DisplayPokemon = () => {
     fetchApi()
 
     const handleOpenModal = () => {
-        setIsModalOpen(true)
+        setModalOpen({...modalOpen , isOpen : true})
     }
 
     const openModal = () => {
-        if (isModalOpen === true) {
+        if (modalOpen.isOpen === true) {
 
-            return <Modal setIsModalOpen={setIsModalOpen}/>
+            return <Modal setModalOpen={setModalOpen} modalOpen={modalOpen}/>
         }
     }
 
@@ -40,7 +43,6 @@ const DisplayPokemon = () => {
         setSearchTerm(value)
     }
 
-    console.log(searchTerm);
     return (
         <div className='BackDisplayPokemon'>
             <div className="logo-content">

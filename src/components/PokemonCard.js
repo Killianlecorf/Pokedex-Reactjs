@@ -4,11 +4,11 @@ const PokemonCard = ({name, img}) => {
     return (
         <div className='FlexCard'>
                 <div className='BackCard'>
-                    <div className='TitleCard'>
-                        {name}
-                    </div>
                     <div className='ImgContentCard'>
                         <img src={img}></img>
+                    </div>
+                    <div className='TitleCard'>
+                        {name}
                     </div>
                 </div>
         </div>

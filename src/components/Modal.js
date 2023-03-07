@@ -1,19 +1,24 @@
 import React from 'react';
 import { CgClose } from "react-icons/cg";
 
-const Modal = () => {
+const Modal = ({setIsModalOpen, name}) => {
 
-    const handleCloseModa = () => {
-        
+    const handleCloseModal = () => {
+        setIsModalOpen(false)
     }
 
     return (
-        <div className='modal-wrapper'>
+        <div onClick={handleCloseModal} className='modal-wrapper'>
             <div className="modal">
                 <div className="close-area">
-                        <div>
-                            <CgClose className='close-cross' />
-                        </div>
+                    <div className='close-cross-content'>
+                        <CgClose onClick={handleCloseModal} className='close-cross' />
+                    </div>
+                </div>
+                <div className='title-content'>
+                    <h2>
+                        {name}
+                    </h2>
                 </div>
             </div>
         </div>

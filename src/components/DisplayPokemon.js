@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream
 import React, { useState } from 'react';
 import Modal from './Modal';
-=======
-import React, { useEffect, useState } from 'react';
-import ModalPokemon from './ModalPokemon';
->>>>>>> Stashed changes
 import PokemonCard from './PokemonCard';
 
 const DisplayPokemon = () => {
@@ -20,7 +15,6 @@ const DisplayPokemon = () => {
     
     fetchApi()
 
-<<<<<<< Updated upstream
     const handleOpenModal = () => {
         setIsModalOpen(true)
     }
@@ -28,36 +22,16 @@ const DisplayPokemon = () => {
     const openModal = () => {
         if (isModalOpen === true) {
 
-            return <Modal />
+            return <Modal setIsModalOpen={setIsModalOpen}/>
         }
     }
 
     return (
         <div className='BackDisplayPokemon'>
             <div className='DisplayCard'>
-            <button onClick={handleOpenModal}>Open Modal</button>
             {openModal()}
-=======
-    const handleDisplayModalPokemon = () => {
-        return <ModalPokemon name={data.name} />
-    }
-
-    const displayPagination = () => {
-        for (let index = 0; index < 10; index++) {
-            return <PokemonCard key={data[index].id} name={data[index].name} img={data[index].image} /> 
-        }
-    }
-    
-    useEffect(() => {
-        displayPagination()
-    },[])
-    
-    return (
-        <div className='BackDisplayPokemon'>
-            <div onClick={handleDisplayModalPokemon} className='DisplayCard'>
->>>>>>> Stashed changes
                 {
-                    
+                    data.map(pokemon => <div onClick={handleOpenModal}><PokemonCard name= {pokemon.name} img={pokemon.image} /></div>)
                 }
             </div>
         </div>

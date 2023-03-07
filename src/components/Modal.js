@@ -1,10 +1,10 @@
 import React from 'react';
 import { CgClose } from "react-icons/cg";
 
-const Modal = ({setIsModalOpen, name}) => {
+const Modal = ({setModalOpen, modalOpen, name}) => {
 
     const handleCloseModal = () => {
-        setIsModalOpen(false)
+        setModalOpen({...modalOpen, isOpen: false})
     }
 
     return (

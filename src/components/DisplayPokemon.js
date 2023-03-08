@@ -34,6 +34,8 @@ const DisplayPokemon = () => {
         }
     }
 
+    const pageNumber = data.length / postPerPage
+
     const lastPostIndex = currentPage * postPerPage
     const firstPostIndex = lastPostIndex - postPerPage
     const currentPost = data.slice(firstPostIndex, lastPostIndex)
@@ -66,10 +68,11 @@ const DisplayPokemon = () => {
                 }
             </div>
             <Pagination 
-                totalPosts={currentPost.length} 
+                totalPosts={data.length} 
                 postPerPage={postPerPage} 
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}
+                pageNumber={Math.ceil(pageNumber)}
             />
         </div>
     );

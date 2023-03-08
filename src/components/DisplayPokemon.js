@@ -66,7 +66,7 @@ const DisplayPokemon = () => {
                 }
             </div>
             <Pagination 
-                totalPosts={data.length} 
+                totalPosts={currentPost.length} 
                 postPerPage={postPerPage} 
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}

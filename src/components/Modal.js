@@ -4,11 +4,7 @@ import { CgClose } from "react-icons/cg";
 const Modal = ({setModalOpen, modalOpen, name}) => {
 
     const handleCloseModal = () => {
-<<<<<<< Updated upstream
         setModalOpen({...modalOpen, isOpen: false})
-=======
-        
->>>>>>> Stashed changes
     }
 
     return (

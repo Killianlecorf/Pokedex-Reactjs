@@ -3,13 +3,42 @@
     height: auto;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(90deg, red , orange, red);
+    
 
 
     .DisplayCard{
-        width: 90vw;
+        width: 40%;
         height: auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .logo-content{
+        display: flex;
+        justify-content: center;
+        width: 40vw;
+
+        .logo-pokemon{
+            width: 50%;
+            height: auto;
+        }
+    }
+
+    .title-pokemon{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: gray;
+    }
+
+    .search-bar{
+        width: 20vw;
+        height: 20px;
+        border-radius: 20px;
+        border: 2px solid black;
+        margin-bottom: 50px;
+        padding-left: 10px;
     }
 }

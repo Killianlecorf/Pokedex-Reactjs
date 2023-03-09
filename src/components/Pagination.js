@@ -28,7 +28,7 @@ const Pagination = ({totalPosts, postPerPage, setCurrentPage, currentPage, pageN
                 <button className='pagination-number-left' onClick={previousPagination}> <FiArrowLeft /></button>
             </div>
             {pages.map((page, index) => {
-                return <button className={page+1 == currentPage ? 'pagination-number-active' : 'pagination-number'} key={index} onClick={() => setCurrentPage(page+1)}>{page+1}</button>
+                return <button className={page+1 === currentPage ? 'pagination-number-active' : 'pagination-number'} key={index} onClick={() => setCurrentPage(page+1)}>{page+1}</button>
             })}
             <div className="previous-pagination">
                 <button className='pagination-number-right' onClick={nextPagination}> <FiArrowRight /></button>

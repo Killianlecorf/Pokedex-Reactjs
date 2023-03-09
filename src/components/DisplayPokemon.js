@@ -7,6 +7,7 @@ import logoPokemon from '../assets/img/logo.png'
 const DisplayPokemon = () => {
 
     const [data,  setData] = useState([])
+    // const [dataFilter, setDataFilter] = useState([])
     const [modalOpen,  setModalOpen] = useState({
         isOpen: false,
         pokemon: null
@@ -34,6 +35,8 @@ const DisplayPokemon = () => {
         }
     }
 
+    const pageNumber = data.length / postPerPage
+
     const lastPostIndex = currentPage * postPerPage
     const firstPostIndex = lastPostIndex - postPerPage
     const currentPost = data.slice(firstPostIndex, lastPostIndex)
@@ -41,6 +44,7 @@ const DisplayPokemon = () => {
     const handleSearchTerm = (event) => {
         let value = event.target.value;
         setSearchTerm(value)
+        // setDataFilter(data.filter(() => {searchTerm}))
     }
 
     return (
@@ -66,10 +70,11 @@ const DisplayPokemon = () => {
                 }
             </div>
             <Pagination 
-                totalPosts={currentPost.length} 
+                totalPosts={data.length} 
                 postPerPage={postPerPage} 
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}
+                pageNumber={Math.ceil(pageNumber)}
             />
         </div>
     );

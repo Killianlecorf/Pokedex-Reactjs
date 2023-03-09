@@ -1,7 +1,7 @@
 import React from 'react';
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
-const Pagination = ({totalPosts, postPerPage, setCurrentPage, currentPage}) => {
+const Pagination = ({totalPosts, postPerPage, setCurrentPage, currentPage, pageNumber}) => {
 
     let pages = [];
 
@@ -9,16 +9,29 @@ const Pagination = ({totalPosts, postPerPage, setCurrentPage, currentPage}) => {
         pages.push(i)
     }
 
+    const previousPagination = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1)   
+        }
+    }
+
+    const nextPagination = () =>{
+        if (currentPage !== pageNumber) {
+            setCurrentPage(currentPage + 1)      
+        }
+    }
+
+
     return (
-        <div>
+        <div className='pagination-content'>
             <div className="previous-pagination">
-                <button className='pagination-number' onClick={() => setCurrentPage(currentPage + 1)}> <FiArrowLeft /></button>
+                <button className='pagination-number-left' onClick={previousPagination}> <FiArrowLeft /></button>
             </div>
             {pages.map((page, index) => {
-                return <button className='pagination-number' key={index} onClick={() => setCurrentPage(page)}>{page}</button>
+                return <button className={page+1 === currentPage ? 'pagination-number-active' : 'pagination-number'} key={index} onClick={() => setCurrentPage(page+1)}>{page+1}</button>
             })}
             <div className="previous-pagination">
-                <button className='pagination-number' onClick={() => setCurrentPage(currentPage - 1)}> <FiArrowRight /></button>
+                <button className='pagination-number-right' onClick={nextPagination}> <FiArrowRight /></button>
             </div>
         </div>
     );

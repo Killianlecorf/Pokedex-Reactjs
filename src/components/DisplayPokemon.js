@@ -7,6 +7,7 @@ import logoPokemon from '../assets/img/logo.png'
 const DisplayPokemon = () => {
 
     const [data,  setData] = useState([])
+    // const [dataFilter, setDataFilter] = useState([])
     const [modalOpen,  setModalOpen] = useState({
         isOpen: false,
         pokemon: null
@@ -43,6 +44,7 @@ const DisplayPokemon = () => {
     const handleSearchTerm = (event) => {
         let value = event.target.value;
         setSearchTerm(value)
+        // setDataFilter(data.filter(() => {searchTerm}))
     }
 
     return (
